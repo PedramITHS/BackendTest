@@ -1,10 +1,13 @@
 const express = require("express");
+const cors = require("cors");
 
 const app = express();
 port = process.env.PORT || 3000;
 
+app.use(cors());
+
 app.get("/", (req, res) => {
-  res.send({ Hello: "World" });
+  res.send({ connect: "Succesfully pulling from the backend!" });
 });
 
 app.listen(port, () => {
